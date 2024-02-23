@@ -20,7 +20,13 @@ With the increasing important of email in our daily lives for school and work, t
 ### Motivation 
 There are several motivators to create an accurate email spam detector. Security enhancement to decrease the chances that someone can hack into personal or company data is one of many factors. Another factor is productivity improvment by spending less time looking through emails and determining if they are valuable or not.
 
-...
+## Methods
+
+### Data Preprocessing
+There are several methods to encode the word data to numerical, which can then be inputted to the model. Text representation techniques inlcude one-hot encoding, bag of words, N-grams and others. We will start with bag of words method, which is pretty intuitive, popular and has multiple libraries that support it. We can use CountVectorizer class from sklearn library for this task. In the future, we most likely will try N-gram encoding and compare results.  
+
+### Model selection
+There are various ML algorithms and deep-learning models such as CNN that showed good results on spam detection and similar tasks. We will primarily focus on using classical supervised ML algorithms: Naive Bayes, Support Vector Machines, and Random Forests - to experimentally find the best model. GaussianNB is one example of the class from sklearn we can use for Naive Bayes. 
 
 ## Results and Discussion
 When classifying emails as spam or not spam, it is essential to reduce false positives to an absolute minimum. No one wants an email with a high-paying job offer getting sent to spam. With this priority in mind, we have selected several machine-learning metrics that will allow us to minimize false positives while also detecting as many true positives as possible.
