@@ -25,15 +25,17 @@ There are several motivators to create an accurate email spam detector. Security
 ## Results and Discussion
 When classifying emails as spam or not spam, it is essential to reduce false positives to an absolute minimum. No one wants an email with a high-paying job offer getting sent to spam. With this priority in mind, we have selected several machine-learning metrics that will allow us to minimize false positives while also detecting as many true positives as possible.
 
-### Precision 
+### Metrics
+#### Precision 
 Precision is the ratio of true positives to the total number of examples classified as positive in a test sample. Maximizing precision will prevent human-created emails from being misclassified as spam.
 
-### F-beta 
+#### F-beta 
 While precision is vital, we also want to detect as many instances of spam as possible. The F-beta metric combines precision and recall together in a weighted average. A beta value less than 1 weights precision more strongly than recall, while a beta value greater than 1 does the opposite. By setting our beta to less than 1, say to 0.5, we can minimize false positives while rewarding true positives.
 
-### Confusion matrix 
+#### Confusion matrix 
 Alongside precision and F-beta, it will be useful to generate a full confusion matrix. The components of the confusion matrix already need to be calculated to calculate our other metrics, so it makes sense to use this metric as well. Seeing the raw numbers of true positives and false positives will be especially useful when evaluating our models.
 
+### Expected Results
 For our project, there are several metric targets that we would like to achieve. Due to the strong negative impact of false positives in our problem domain, we are aiming for a precision greater than 0.99. This would require close to zero false positives in our confusion matrix. A good F-beta score is harder to define as it depends on the weighting used as well as the inherent difficulty of the problem. We will attempt to achieve an F-beta of 0.8 as this seems to be a decent rule-of-thumb value.
 
 
