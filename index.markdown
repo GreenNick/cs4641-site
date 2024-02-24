@@ -68,11 +68,11 @@ Confusion matrix components need to be calculated for our other metrics, so it m
         <td>Intro and References and respective slides in presentation</td>
     <tr>
     <tr>
-        <td></td>
-        <td></td>
+        <td>Yash Desai</td>
+        <td>introduction and references section</td>
     <tr>
     <tr>
-        <td></td>
-        <td></td>
+        <td>Nicholas Skiouris</td>
+        <td>introduction and references seciton</td>
     <tr>
 </table>
