@@ -65,7 +65,7 @@ Confusion matrix components need to be calculated for our other metrics, so it m
     <tr>
     <tr>
         <td>Carrington Kelsey</td>
-        <td>Intro and References</td>
+        <td>Intro and References and respective slides in presentation</td>
     <tr>
     <tr>
         <td></td>
