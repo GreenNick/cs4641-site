@@ -8,42 +8,38 @@ layout: home
 
 ## Introduction/Background
 
-In the 21st century, email remains a crucial communication tool, yet its utility is undermined by the inescapable challenge of spam. Our project embarks on leveraging machine learning to enhance spam detection, drawing upon the "Email Spam Detection Dataset (Classification)" from Kaggle. Similar endeavors in data-driven domains have emphasized the importance of applying analytical approaches for discerning patterns within vast datasets [1]. By applying cutting-edge machine learning techniques, this research aims to significantly improve the accuracy of spam detection [2], ensuring email remains a secure and efficient medium for digital communication [3]. 
+In the 21st century, email remains a crucial communication tool, yet its utility is undermined by the challenge of spam. Our project will leverage machine learning to enhance spam detection, drawing upon the “Email Spam Detection Dataset (Classification)” from Kaggle. Similar endeavors in data-driven domains have emphasized the importance of applying analytical approaches for discerning patterns within vast datasets [1]. By applying cutting-edge machine learning techniques, this research aims to significantly improve the accuracy of spam detection [2], ensuring email remains a secure and efficient medium for communication [3].
 
-Dataset Link: [Kaggle Email Spam Detection Dataset](https://www.kaggle.com/datasets/shantanudhakadd/email-spam-detection-dataset-classification)
+Dataset Link: Kaggle Email Spam Detection Dataset
 
 ## Problem Definition
 
-### Problem 
-With the increasing important of email in our daily lives for school and work, the amount of spam mail has also increased. Whether it be dangerous fishing emails or local stores trying to promote their business, people are often missing important emails in the flood of these promotions. We aim to filter out spam mail to make sure that as many important and relevant emails as possible are seen.
+### Problem
+With the increasing importance of email in our daily lives for school and work, the amount of spam has also increased. Whether it be dangerous phishing emails or commercial promotions, people often miss important emails in this digital deluge. We aim to filter out spam to maximize relevant emails seen.
 
-### Motivation 
-There are several motivators to create an accurate email spam detector. Security enhancement to decrease the chances that someone can hack into personal or company data is one of many factors. Another factor is productivity improvment by spending less time looking through emails and determining if they are valuable or not.
+### Motivation
+There are several motivators to create an accurate spam detector. Spam filters enhance security by removing a potential attack vector for hackers. Spam detection also improves productivity since people can spend less time determining if an email is valuable.
 
 ## Methods
 
 ### Data Preprocessing
-There are several methods to encode the word data to numerical, which can then be inputted to the model. Text representation techniques inlcude one-hot encoding, bag of words, N-grams and others. We will start with bag of words method, which is pretty intuitive, popular and has multiple libraries that support it. We can use CountVectorizer class from sklearn library for this task. In the future, we most likely will try N-gram encoding and compare results.  
+There are several methods to encode text, which can then be inputted into our models. Text representation techniques include one-hot encoding, bag-of-words, N-grams, and others. We will start with the bag-of-words method, an intuitive method with extensive library support. We can use the CountVectorizer from sklearn for this. We will try N-gram encoding as well to compare results.
 
 ### Model selection
-There are various ML algorithms and deep-learning models such as CNN that showed good results on spam detection and similar tasks. We will primarily focus on using classical supervised ML algorithms: Naive Bayes, Support Vector Machines, and Random Forests - to experimentally find the best model. GaussianNB is one example of the class from sklearn we can use for Naive Bayes. 
+There are various ML algorithms and DL models such as CNN that detect spam well. We will focus on classical supervised ML algorithms for our project: Naive Bayes, Support Vector Machines, and Random Forest. GaussianNB is one example of the class from sklearn we can use for Naive Bayes.
 
 ## Results and Discussion
-When classifying emails as spam or not spam, it is essential to reduce false positives to an absolute minimum. No one wants an email with a high-paying job offer getting sent to spam. With this priority in mind, we have selected several machine-learning metrics that will allow us to minimize false positives while also detecting as many true positives as possible.
+When detecting spam, it is essential to reduce false positives. No one wants an email with a job offer getting sent to spam. With this in mind, we have selected metrics that will allow us to minimize false positives while detecting as many true positives as possible.
 
 ### Metrics
-#### Precision 
-Precision is the ratio of true positives to the total number of examples classified as positive in a test sample. Maximizing precision will prevent human-created emails from being misclassified as spam.
+#### Precision
+Precision is the ratio of the TPs to the total TPs and FPs in a test sample. Maximizing precision will prevent real emails from being misclassified as spam. We aim to achieve a precision greater than 0.99.
 
-#### F-beta 
-While precision is vital, we also want to detect as many instances of spam as possible. The F-beta metric combines precision and recall together in a weighted average. A beta value less than 1 weights precision more strongly than recall, while a beta value greater than 1 does the opposite. By setting our beta to less than 1, say to 0.5, we can minimize false positives while rewarding true positives.
+#### F-beta
+Precision is vital, but recall is important as well. The F-beta metric combines precision and recall together in a weighted average. By setting our beta to less than 1, we can prioritize minimizing FPs while still rewarding TPs. A good F-beta score is hard to define in advance, but we aim to achieve at least 0.8.
 
-#### Confusion matrix 
-Alongside precision and F-beta, it will be useful to generate a full confusion matrix. The components of the confusion matrix already need to be calculated to calculate our other metrics, so it makes sense to use this metric as well. Seeing the raw numbers of true positives and false positives will be especially useful when evaluating our models.
-
-### Expected Results
-For our project, there are several metric targets that we would like to achieve. Due to the strong negative impact of false positives in our problem domain, we are aiming for a precision greater than 0.99. This would require close to zero false positives in our confusion matrix. A good F-beta score is harder to define as it depends on the weighting used as well as the inherent difficulty of the problem. We will attempt to achieve an F-beta of 0.8 as this seems to be a decent rule-of-thumb value.
-
+#### Confusion matrix
+Confusion matrix components need to be calculated for our other metrics, so it makes sense to use this metric as well. The raw TP and FP numbers will help us evaluate our models. Our primary expectation from the confusion matrix is to have nearly 0 FPs.
 
 ## References
 
