@@ -1,6 +1,6 @@
 ## Contributions:
-Sergei Novikov: methods section and respective slides in presentation  
+Sergei Novikov: methods section
 Carrington Kelsey: introduction and references section  
-Yash Desai: introduction and references section <br>
-Nicholas Bowers: <br>
-Nicholas Skiouris: <br>
+Yash Desai: introduction and references section 
+Nicholas Bowers: problem definition
+Nicholas Skiouris: introduction and references seciton
