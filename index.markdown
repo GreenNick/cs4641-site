@@ -53,7 +53,7 @@ Confusion matrix components need to be calculated for our other metrics, so it m
 | Name                | Proposal Contributions                             |
 |-----                | -----------------------                            |
 |Sergei Novikov       | Methods and respective slides in presentation      |
-|                     |                                                    |
+|Carrington Kelsey    |Intro and References                                |
 |                     |                                                    |
 |                     |                                                    |
 |                     |                                                    |
