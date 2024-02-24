@@ -48,3 +48,12 @@ Confusion matrix components need to be calculated for our other metrics, so it m
 [2] T. Almeida, J. Gómez Hidalgo, and A. Yamakami, "Towards SMS Spam Filtering: Results under a New Dataset," International Journal of Information Security Science, vol. 2, no. 1, pp. 1-18, 2013.
 
 [3] S. Kiritchenko, S. Matwin, "Email Classification with Co-Training," in Proceedings of the 2006 Conference on Privacy, Security and Trust, Markham, Ontario, Canada, 2006, pp. 1-8.
+
+### Contributions
+| Name                | Proposal Contributions                             |
+|-----                | -----------------------                            |
+|Sergei Novikov       | Methods and respective slides in presentation      |
+|                     |                                                    |
+|                     |                                                    |
+|                     |                                                    |
+|                     |                                                    |
