@@ -69,10 +69,12 @@ Confusion matrix components need to be calculated for our other metrics, so it m
     <tr>
     <tr>
         <td>Yash Desai</td>
-        <td>introduction and references section</td>
+        <td>Introduction and references section</td>
     <tr>
     <tr>
         <td>Nicholas Skiouris</td>
-        <td>results and dicussions section</td>
+        <td>Results and dicussions section</td>
     <tr>
 </table>
+
+<img src="gantt.png" />
