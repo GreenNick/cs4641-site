@@ -50,10 +50,29 @@ Confusion matrix components need to be calculated for our other metrics, so it m
 [3] S. Kiritchenko, S. Matwin, "Email Classification with Co-Training," in Proceedings of the 2006 Conference on Privacy, Security and Trust, Markham, Ontario, Canada, 2006, pp. 1-8.
 
 ### Contributions
-| Name                | Proposal Contributions                             |
-|-----                | -----------------------                            |
-|Sergei Novikov       | Methods and respective slides in presentation      |
-|Carrington Kelsey    |Intro and References                                |
-|                     |                                                    |
-|                     |                                                    |
-|                     |                                                    |
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Proposal Contributions</td>
+    </tr>
+    <tr>
+        <td>Sergei Novikov</td>
+        <td>Methods and respective slides in presentation</td>
+    <tr>
+    <tr>
+        <td>Nicholas Bowers</td>
+        <td>Website setup, Results & Discussion and respective slides in presentation</td>
+    <tr>
+    <tr>
+        <td>Carrington Kelsey</td>
+        <td>Intro and References</td>
+    <tr>
+    <tr>
+        <td></td>
+        <td></td>
+    <tr>
+    <tr>
+        <td></td>
+        <td></td>
+    <tr>
+</table>
