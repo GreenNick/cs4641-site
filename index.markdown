@@ -73,6 +73,6 @@ Confusion matrix components need to be calculated for our other metrics, so it m
     <tr>
     <tr>
         <td>Nicholas Skiouris</td>
-        <td>introduction and references seciton</td>
+        <td>results and dicussions section</td>
     <tr>
 </table>
