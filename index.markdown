@@ -23,13 +23,13 @@ There are several motivators to create an accurate spam detector. Spam filters e
 ## Methods
 
 ### Data Preprocessing
-There are several methods to encode text, which can then be inputted into our models. Text representation techniques include one-hot encoding, bag-of-words, N-grams, and others. We will start with the bag-of-words method, an intuitive method with extensive library support. We can use the CountVectorizer from sklearn for this. We will try N-gram encoding as well to compare results.
+For data preprocessing, we used the bag of words algorithm to quantify the data encoded in the emails.
 
 ### Model selection
-There are various ML algorithms and DL models such as CNN that detect spam well. We will focus on classical supervised ML algorithms for our project: Naive Bayes, Support Vector Machines, and Random Forest. GaussianNB is one example of the class from sklearn we can use for Naive Bayes.
+For the midterm portion of the project, we used Naive Bayes to analyze the email data. This algorithm classified our information as either "ham" (a real email) or "spam." We chose this algorithm for our email spam detection project because of its proven efficiency and effectiveness in handling large datasets, its ability to work well with text data through the application of conditional probability, and its fast computation time, making it an ideal solution for accurately classifying emails as spam or ham.
 
 ## Results and Discussion
-When detecting spam, it is essential to reduce false positives. No one wants an email with a job offer getting sent to spam. With this in mind, we have selected metrics that will allow us to minimize false positives while detecting as many true positives as possible.
+Overall, the model did a good job of classifying the data we input. More specifically, it does a great job of identifying the hams in the dataset with high accuracy. On the other hand, it is only able to correctly classify the spam about half of the time (see the confusion matrix in `main.ipynb`). We will try to fix this problem with different models in the final project, but we believe this problem could also be due to the lack of "spam" data in the dataset. If the latter is true, we could look into finding a new dataset for the project.
 
 ### Metrics
 #### Precision
@@ -57,15 +57,15 @@ Confusion matrix components need to be calculated for our other metrics, so it m
     </tr>
     <tr>
         <td>Sergei Novikov</td>
-        <td>Methods and respective slides in presentation</td>
+        <td>Preprocessing and model implementation</td>
     <tr>
     <tr>
         <td>Nicholas Bowers</td>
-        <td>Website setup, Results & Discussion and respective slides in presentation</td>
+        <td>Fixed page setup, repo cleanup</td>
     <tr>
     <tr>
         <td>Carrington Kelsey</td>
-        <td>Intro and References and respective slides in presentation</td>
+        <td>Readme creation, project write up for team page</td>
     <tr>
     <tr>
         <td>Yash Desai</td>
@@ -73,7 +73,7 @@ Confusion matrix components need to be calculated for our other metrics, so it m
     <tr>
     <tr>
         <td>Nicholas Skiouris</td>
-        <td>Results and dicussions section</td>
+        <td>Introduction and references section</td>
     <tr>
 </table>
 
