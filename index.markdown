@@ -23,13 +23,13 @@ There are several motivators to create an accurate spam detector. Spam filters e
 ## Methods
 
 ### Data Preprocessing
-For data preprocessing, we used the bag of words algorithm to quantify the data encoded in the emails.
+For data preprocessing, we used the bag of words algorithm to quantify the data encoded in the emails. We encoded 'ham' as 0, and 'spam' as 1. For the text message encoding via bag of words we used CountVectorizer from sklearn. We got a dimensionality or vocabulary size of 8761. 
 
 ### Model selection
 For the midterm portion of the project, we used Naive Bayes to analyze the email data. This algorithm classified our information as either "ham" (a real email) or "spam." We chose this algorithm for our email spam detection project because of its proven efficiency and effectiveness in handling large datasets, its ability to work well with text data through the application of conditional probability, and its fast computation time, making it an ideal solution for accurately classifying emails as spam or ham.
 
 ## Results and Discussion
-Overall, the model did a good job of classifying the data we input. More specifically, it does a great job of identifying the hams in the dataset with high accuracy. On the other hand, it is only able to correctly classify the spam about half of the time (see the confusion matrix in `main.ipynb`). We will try to fix this problem with different models in the final project, but we believe this problem could also be due to the lack of "spam" data in the dataset. If the latter is true, we could look into finding a new dataset for the project.
+Overall, the model did a good job of classifying the data we input. More specifically, it does a great job of identifying the hams in the dataset with high accuracy. On the other hand, it is only able to correctly classify the spam about half of the time (see the confusion matrix in `main.ipynb` and sensitivity score below). We will try to fix this problem with different models in the final project, but we believe this problem could also be due to the lack of "spam" data in the dataset. If the latter is true, we could look into finding a new dataset for the project.
 
 ### Metrics
 #### Precision
@@ -40,6 +40,8 @@ Precision is vital, but recall is important as well. The F-beta metric combines 
 
 #### Confusion matrix
 Confusion matrix components need to be calculated for our other metrics, so it makes sense to use this metric as well. The raw TP and FP numbers will help us evaluate our models. Our primary expectation from the confusion matrix is to have nearly 0 FPs.
+
+### Next steps
 
 ## References
 
