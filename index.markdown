@@ -61,7 +61,7 @@ Confusion matrix components need to be calculated for our other metrics, so it m
     <tr>
     <tr>
         <td>Nicholas Bowers</td>
-        <td>Fixed page setup, repo cleanup</td>
+        <td>Fixed page setup, repo setup and cleanup</td>
     <tr>
     <tr>
         <td>Carrington Kelsey</td>
