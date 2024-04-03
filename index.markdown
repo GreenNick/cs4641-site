@@ -3,7 +3,9 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 title: Enhanced Spam Detection Using Machine Learning
-layout: default
+layout: page
+sidebar:
+  nav: section-nav
 ---
 ## Introduction/Background
 
