@@ -62,7 +62,8 @@ Things that we consider to do next to improve the model:
 2) Search for simliar datasets and add more data for the model, particularly "spam" data
 3) Implement other ML algorithms (SVM, Random forests), record and compare results.
 4) Try different preprocessing technique (N-grams). Try combinations of different models and pre-processing techniques. 
-5) Implement deep learning model (CNN) with pytorch 
+5) Implement deep learning model (CNN) with pytorch
+6) Compare our results with results from relevant papers. 
 
 ## References
 
