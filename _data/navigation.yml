@@ -1,0 +1,20 @@
+header:
+  - title: Project Repository
+    url: https://github.gatech.edu/CS-4641-Group-64/cs-4641-project
+  - title: Website Repository
+    url: https://github.com/GreenNick/cs4641-site
+section-nav:
+  - title: Report Sections
+    children:
+      - title:  Introduction/Background
+        url:    /#introductionbackground
+      - title:  Problem Definition
+        url:    /#problem-definition
+      - title:  Methods
+        url:    /#methods
+      - title:  Results and Discussion
+        url:    /#results-and-discussion
+      - title:  References
+        url:    /#references
+      - title:  Contributions
+        url:    /#contributions
