@@ -41,6 +41,20 @@ Precision is vital, but recall is important as well. The F-beta metric combines 
 #### Confusion matrix
 Confusion matrix components need to be calculated for our other metrics, so it makes sense to use this metric as well. The raw TP and FP numbers will help us evaluate our models. Our primary expectation from the confusion matrix is to have nearly 0 FPs.
 
+### Naive Bayes Results
+    tn: 865, fp: 112, fn: 8, tp: 130
+    Accuracy: 0.8924
+    F-1 score: 0.6842
+    Precision: 0.5372
+    Sensitivity: 0.942
+
+### Visualizations
+#### Dataset Composition
+<img src="assets/composition.png" />
+
+#### Naive Bayes Confusion Matrix
+<img src="assets/nb_confusion.png" />
+
 ### Next steps
 
 ## References
@@ -55,7 +69,7 @@ Confusion matrix components need to be calculated for our other metrics, so it m
 <table>
     <tr>
         <td>Name</td>
-        <td>Proposal Contributions</td>
+        <td>Midterm Contributions</td>
     </tr>
     <tr>
         <td>Sergei Novikov</td>
@@ -63,7 +77,7 @@ Confusion matrix components need to be calculated for our other metrics, so it m
     <tr>
     <tr>
         <td>Nicholas Bowers</td>
-        <td>Fixed page setup, repo setup and cleanup</td>
+        <td>Fixed website setup, preprocessing</td>
     <tr>
     <tr>
         <td>Carrington Kelsey</td>
