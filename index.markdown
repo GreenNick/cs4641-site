@@ -32,6 +32,23 @@ For the midterm portion of the project, we used Naive Bayes to analyze the email
 ## Results and Discussion
 Overall, the model did a good job of classifying the data we input. More specifically, it does a great job of identifying the hams in the dataset with high accuracy. On the other hand, it is only able to correctly classify the spam about half of the time (see the confusion matrix in `main.ipynb` and precision score below). We will try to fix this problem with different models in the final project, but we believe this problem could also be due to the lack of "spam" data in the dataset. If the latter is true, we could look into finding a new dataset for the project.
 
+<table>
+  <tr>
+    <th></th>
+    <th>Accuracy</th>
+    <th>F-1 score</th>
+    <th>Precision</th>
+    <th>Sensitivity</th>
+  </tr>
+  <tr>
+    <th>Naive Bayes</th>
+    <td>0.8924</td>
+    <td>0.6842</td>
+    <td>0.5372</td>
+    <td>0.942</td>
+  </tr>
+</table>
+
 ### Metrics
 #### Precision
 Precision is the ratio of the TPs to the total TPs and FPs in a test sample. Maximizing precision will prevent real emails from being misclassified as spam. We aim to achieve a precision greater than 0.99.
