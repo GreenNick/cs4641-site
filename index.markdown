@@ -47,6 +47,13 @@ Overall, the model did a good job of classifying the data we input. More specifi
     <td>0.5372</td>
     <td>0.942</td>
   </tr>
+  <tr>
+    <th>Resnet18</th>
+    <td>0.9816</td>
+    <td>0.9286</td>
+    <td>0.942</td>
+    <td>0.9155</td>
+  </tr>
 </table>
 
 ### Metrics
