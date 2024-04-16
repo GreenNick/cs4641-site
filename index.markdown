@@ -54,6 +54,13 @@ Overall, the model did a good job of classifying the data we input. More specifi
     <td>0.942</td>
     <td>0.9155</td>
   </tr>
+  <tr>
+    <th>CNN</th>
+    <td>0.9803</td>
+    <td>0.9225</td>
+    <td>0.9776</td>
+    <td>0.8733</td>
+  </tr>
 </table>
 
 ### Metrics
