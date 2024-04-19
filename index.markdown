@@ -24,14 +24,60 @@ There are several motivators to create an accurate spam detector. Spam filters e
 ## Methods
 
 ### Data Preprocessing
-For data preprocessing, we used the bag of words algorithm to quantify the data encoded in the emails. We encoded 'ham' as 0, and 'spam' as 1. For the text message encoding via bag of words we used CountVectorizer from sklearn. We got a dimensionality or vocabulary size of 8761. 
+For data preprocessing, we used the Bag of Words algorithm to quantify the data encoded in the emails. We encoded 'ham' as 0, and 'spam' as 1. We tweaked some of the parameters like removing 'Stop words' and varying the vocabularly size in different models. We decided not to proceed with N-grams or TF-IDF encodings because firstly they wouldn't give any significant improvement in accuracies based on our research and NLP is slighly out of scope of this class. We prioritized experimenting with various classical ML algirthms and CNN networks using Pytorch and Tensorflow. 
 
 ### Model selection
 For the midterm portion of the project, we used Naive Bayes to analyze the email data. This algorithm classified our information as either "ham" (a real email) or "spam." We chose this algorithm for our email spam detection project because of its proven efficiency and effectiveness in handling large datasets, its ability to work well with text data through the application of conditional probability, and its fast computation time, making it an ideal solution for accurately classifying emails as spam or ham.
 
+Random Forests - [tbc]
+Custom CNN - [Carrington]
+Resnet18 - [Sergei]
+
 ## Results and Discussion
+
+#### Mitdterm report part
 Overall, the model did a good job of classifying the data we input. More specifically, it does a great job of identifying the hams in the dataset with high accuracy. On the other hand, it is only able to correctly classify the spam about half of the time (see the confusion matrix in `main.ipynb` and precision score below). We will try to fix this problem with different models in the final project, but we believe this problem could also be due to the lack of "spam" data in the dataset. If the latter is true, we could look into finding a new dataset for the project.
 
+#### Final Report part
+Random Forests results
+Custom CNN results 
+##### Resnet18 results
+After getting great results ...
+
+
+
+Plan:
+1) Couldn't find high quality and quantity spam/ham data online and prioritized testing other models first.
+2) Random forests paragraph (Should give the same result imao as Naive Bayes)
+3) Custom CNN using Tensorflow (high accuracy and precision)
+4) Resnet18
+5) Conclusion
+
+
+
+### Metrics
+#### Precision
+Precision is the ratio of the TPs to the total TPs and FPs in a test sample. Maximizing precision will prevent real emails from being misclassified as spam. We aim to achieve a precision greater than 0.99.
+
+#### F-beta (change to f-1 score)
+Precision is vital, but recall is important as well. The F-beta metric combines precision and recall together in a weighted average. By setting our beta to less than 1, we can prioritize minimizing FPs while still rewarding TPs. A good F-beta score is hard to define in advance, but we aim to achieve at least 0.8.
+
+#### Confusion matrix
+Confusion matrix components need to be calculated for our other metrics, so it makes sense to use this metric as well. The raw TP and FP numbers will help us evaluate our models. Our primary expectation from the confusion matrix is to have nearly 0 FPs.
+
+#### Sensitivity
+
+#### Accuracy
+
+
+### Bag-of-words Naive Bayes Results - [Perhaps remove it]
+    tn: 865, fp: 112, fn: 8, tp: 130
+    Accuracy: 0.8924
+    F-1 score: 0.6842
+    Precision: 0.5372
+    Sensitivity: 0.942
+
+#### Results table
 <table>
   <tr>
     <th></th>
@@ -40,6 +86,12 @@ Overall, the model did a good job of classifying the data we input. More specifi
     <th>Precision</th>
     <th>Sensitivity</th>
   </tr>
+  <tr>
+    <th>Random Forests</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
   <tr>
     <th>Naive Bayes</th>
     <td>0.8924</td>
@@ -62,23 +114,6 @@ Overall, the model did a good job of classifying the data we input. More specifi
     <td>0.8733</td>
   </tr>
 </table>
-
-### Metrics
-#### Precision
-Precision is the ratio of the TPs to the total TPs and FPs in a test sample. Maximizing precision will prevent real emails from being misclassified as spam. We aim to achieve a precision greater than 0.99.
-
-#### F-beta
-Precision is vital, but recall is important as well. The F-beta metric combines precision and recall together in a weighted average. By setting our beta to less than 1, we can prioritize minimizing FPs while still rewarding TPs. A good F-beta score is hard to define in advance, but we aim to achieve at least 0.8.
-
-#### Confusion matrix
-Confusion matrix components need to be calculated for our other metrics, so it makes sense to use this metric as well. The raw TP and FP numbers will help us evaluate our models. Our primary expectation from the confusion matrix is to have nearly 0 FPs.
-
-### Bag-of-words Naive Bayes Results
-    tn: 865, fp: 112, fn: 8, tp: 130
-    Accuracy: 0.8924
-    F-1 score: 0.6842
-    Precision: 0.5372
-    Sensitivity: 0.942
 
 ### Visualizations
 #### Dataset Composition
