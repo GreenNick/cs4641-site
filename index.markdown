@@ -24,7 +24,7 @@ There are several motivators to create an accurate spam detector. Spam filters e
 ## Methods
 
 ### Data Preprocessing
-For data preprocessing, we used the Bag of Words algorithm to quantify the data encoded in the emails. We encoded 'ham' as 0, and 'spam' as 1. We tweaked some of the parameters like removing 'Stop words' and varying the vocabularly size in different models. We decided not to proceed with N-grams or TF-IDF encodings because firstly they wouldn't give any significant improvement in accuracies based on our research and NLP is slighly out of scope of this class. We prioritized experimenting with various classical ML algirthms and CNN networks using Pytorch and Tensorflow. 
+For data preprocessing, we used the Bag of Words algorithm to quantify the data encoded in the emails. We encoded 'ham' as 0, and 'spam' as 1. We tweaked some of the parameters like removing 'Stop words' and varying the vocabularly size in different models. We decided not to proceed with N-grams or TF-IDF encodings because firstly they wouldn't give any significant improvement in accuracies based on our research and NLP is slighly out of scope of this class. We prioritized experimenting with various classical ML algirthms and CNN networks using Pytorch and Tensorflow.
 
 ### Model selection
 For the midterm portion of the project, we used Naive Bayes to analyze the email data. This algorithm classified our information as either "ham" (a real email) or "spam." We chose this algorithm for our email spam detection project because of its proven efficiency and effectiveness in handling large datasets, its ability to work well with text data through the application of conditional probability, and its fast computation time, making it an ideal solution for accurately classifying emails as spam or ham.
@@ -40,7 +40,7 @@ Overall, the model did a good job of classifying the data we input. More specifi
 
 
 #### Final Report part
-We used 80/20 train/test split for the model training and testing for all of the models. We also specified specified a random seed to ensure the dataset is split the same way into training and testing sets to ensure better and consistent comparison across different models. For preprocessing methods we generally experimented a little by removing 'stop words' and capping the dimensionality (or vocab size). The former reduced the model perfomance during Naive Bayes testing and we decided not to proceed using it and the later didn't have significant effects on the models perfomance overall.  
+We used 80/20 train/test split for the model training and testing for all of the models. We also specified specified a random seed to ensure the dataset is split the same way into training and testing sets to ensure better and consistent comparison across different models. For preprocessing methods we generally experimented a little by removing 'stop words' and capping the dimensionality (or vocab size). The former reduced the model perfomance during Naive Bayes testing and we decided not to proceed using it and the later didn't have significant effects on the models perfomance overall.
 #### Random Forests results
 After struggling with improving precision with Naive Bayes we decided to proceed with Random Forests and the results exceededed expectations. We initialized a RandomForestClassifier model with default settings from sklearn.ensemble library and trained the model. During the evalation the model reached a precision of 100% and accuracy of 98.39%. So there were not false positives during testing - all the ham messages were classfied correctly as spam. The sensitivity (or recall) slightly reduced from 0.942 to 0.8913 comparing to Naive Bayes. Yet, since the drop in recall was much smaller than increase in precision the overall f1-score significantly improved from 0.6842 to 0.9425.
 
@@ -48,7 +48,7 @@ After struggling with improving precision with Naive Bayes we decided to proceed
 1) Briefly dicuss the results.
 
 ##### Resnet18 results
-After getting great results with a simple custom CNN model we wondered if a more complex multi-layer CNN model will give better results. We also decided to use Pytorch instread of Tensorflow for model training and evaluation to compare those 2 most popular DL frameworks. We chose  Resnet18 based on professor Roozbahani's recommendation. Running ahead we trained the model on both pretrained and non-pretrained weights and it didn't give any difference. We slightly adjusted the Resnet18 default input and output layer to account for the dimensionality of custom dataset. We also converted capped dataset dimensionality to nearest square number and reshape from 1D to 2D to be compatible with 2D convolutional filters in Resnet18. We chose binary cross entropy for the loss function and experimented with both stochastic gradient descent and Adam optimizers during training which didn't yield significant differences (SGD was a bit more stable though and gave more consistent training vs validation loss charts), but Adam was little faster during training. Since the model was much larger than the custom CNN model, it took significantly longer time to train with approximately a little over one minute for each epoch using cpu. After a bit of experimentation with observed that model always converges to optimal accuracy just after a few epochs, similar to custom CNN model and hence we made a final training only on 5 epochs. We used learning rate of 0.001 during trainig and tried to optimize it but it didn't yield significant improvements. After a bit of experimentaiton we got similar results to that of a custom CNN model with slighly bigger recall and lower precision but almost the same f-1 score and accuracy (see results in charts below). We concluded that due to relatively small size of our dataset a larger model doesn't provide any advantage. 
+After getting great results with a simple custom CNN model we wondered if a more complex multi-layer CNN model will give better results. We also decided to use Pytorch instread of Tensorflow for model training and evaluation to compare those 2 most popular DL frameworks. We chose  Resnet18 based on professor Roozbahani's recommendation. Running ahead we trained the model on both pretrained and non-pretrained weights and it didn't give any difference. We slightly adjusted the Resnet18 default input and output layer to account for the dimensionality of custom dataset. We also converted capped dataset dimensionality to nearest square number and reshape from 1D to 2D to be compatible with 2D convolutional filters in Resnet18. We chose binary cross entropy for the loss function and experimented with both stochastic gradient descent and Adam optimizers during training which didn't yield significant differences (SGD was a bit more stable though and gave more consistent training vs validation loss charts), but Adam was little faster during training. Since the model was much larger than the custom CNN model, it took significantly longer time to train with approximately a little over one minute for each epoch using cpu. After a bit of experimentation with observed that model always converges to optimal accuracy just after a few epochs, similar to custom CNN model and hence we made a final training only on 5 epochs. We used learning rate of 0.001 during trainig and tried to optimize it but it didn't yield significant improvements. After a bit of experimentaiton we got similar results to that of a custom CNN model with slighly bigger recall and lower precision but almost the same f-1 score and accuracy (see results in charts below). We concluded that due to relatively small size of our dataset a larger model doesn't provide any advantage.
 
 
 
@@ -78,14 +78,6 @@ Confusion matrix components need to be calculated for our other metrics, so it m
 
 #### Accuracy
 
-
-### Bag-of-words Naive Bayes Results - [Perhaps remove it]
-    tn: 865, fp: 112, fn: 8, tp: 130
-    Accuracy: 0.8924
-    F-1 score: 0.6842
-    Precision: 0.5372
-    Sensitivity: 0.942
-
 #### Results table
 <table>
   <tr>
@@ -97,10 +89,11 @@ Confusion matrix components need to be calculated for our other metrics, so it m
   </tr>
   <tr>
     <th>Random Forests</th>
-    <td>0.9865</td>
-    <td>0.9425</td>
+    <td>0.9874</td>
+    <td>0.9466</td>
     <td>1.0</td>
-    <td>0.8913</td>
+    <td>0.8986</td>
+  </tr>
   <tr>
     <th>Naive Bayes</th>
     <td>0.8924</td>
@@ -110,17 +103,17 @@ Confusion matrix components need to be calculated for our other metrics, so it m
   </tr>
   <tr>
     <th>Resnet18</th>
-    <td>0.9816</td>
-    <td>0.9286</td>
-    <td>0.942</td>
-    <td>0.9155</td>
+    <td>0.9835</td>
+    <td>0.9366</td>
+    <td>0.95</td>
+    <td>0.9236</td>
   </tr>
   <tr>
     <th>CNN</th>
     <td>0.9803</td>
-    <td>0.9225</td>
-    <td>0.9776</td>
-    <td>0.8733</td>
+    <td>0.9231</td>
+    <td>0.9706</td>
+    <td>0.88</td>
   </tr>
 </table>
 
@@ -128,17 +121,30 @@ Confusion matrix components need to be calculated for our other metrics, so it m
 #### Dataset Composition
 <img src="assets/composition.png" />
 
-#### Bag-of-words Naive Bayes Confusion Matrix
-<img src="assets/nb_confusion.png" />
+#### Random Forest
+<img style="width: 80%;" src="assets/rf_conf.png" />
+
+#### Naive Bayes
+<img style="width: 80%;" src="assets/nb_conf.png" />
+
+#### ResNet18
+<img style="width: 48%;" src="assets/rn_loss.png" />
+<img style="width: 48%;" src="assets/rn_acc.png" />
+<img style="width: 80%;" src="assets/rn_conf.png" />
+
+#### CNN
+<img style="width: 48%;" src="assets/cnn_loss.png" />
+<img style="width: 48%;" src="assets/cnn_acc.png" />
+<img style="width: 80%;" src="assets/cnn_conf.png" />
 
 ### Next steps
 Things that we consider to do next to improve the model:
 1) Remove the stop words from the vocabulary.
 2) Search for simliar datasets and add more data for the model, particularly "spam" data
 3) Implement other ML algorithms (SVM, Random forests), record and compare results.
-4) Try different preprocessing technique (N-grams). Try combinations of different models and pre-processing techniques. 
+4) Try different preprocessing technique (N-grams). Try combinations of different models and pre-processing techniques.
 5) Implement deep learning model (CNN) with pytorch
-6) Compare our results with results from relevant papers. 
+6) Compare our results with results from relevant papers.
 
 ## References
 

@@ -26,6 +26,8 @@ title: CS 4641 Group 64
 #   Google search results) and in your feed.xml site description.
 baseurl: "/cs4641-site" # the subpath of your site, e.g. /blog
 url: "https://greennick.github.io" # the base hostname & protocol for your site
+# baseurl: "/"
+# url: ""
 # twitter_username: jekyllrb
 github_username:  CS-4641-Group-64
 
