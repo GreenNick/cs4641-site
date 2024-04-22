@@ -38,11 +38,20 @@ Resnet18 - [Sergei]
 #### Mitdterm report part
 Overall, the model did a good job of classifying the data we input. More specifically, it does a great job of identifying the hams in the dataset with high accuracy. On the other hand, it is only able to correctly classify the spam about half of the time (see the confusion matrix in `main.ipynb` and precision score below). We will try to fix this problem with different models in the final project, but we believe this problem could also be due to the lack of "spam" data in the dataset. If the latter is true, we could look into finding a new dataset for the project.
 
+
 #### Final Report part
-Random Forests results
-Custom CNN results 
+We used 80/20 train/test split for the model training and testing for all of the models. We also specified specified a random seed to ensure the dataset is split the same way into training and testing sets to ensure better and consistent comparison across different models. For preprocessing methods we generally experimented a little by removing 'stop words' and capping the dimensionality (or vocab size). The former reduced the model perfomance during Naive Bayes testing and we decided not to proceed using it and the later didn't have significant effects on the models perfomance overall.  
+#### Random Forests results
+After struggling with improving precision with Naive Bayes we decided to proceed with Random Forests and the results exceededed expectations. We initialized a RandomForestClassifier model with default settings from sklearn.ensemble library and trained the model. During the evalation the model reached a precision of 100% and accuracy of 98.39%. So there were not false positives during testing - all the ham messages were classfied correctly as spam. The sensitivity (or recall) slightly reduced from 0.942 to 0.8913 comparing to Naive Bayes. Yet, since the drop in recall was much smaller than increase in precision the overall f1-score significantly improved from 0.6842 to 0.9425.
+
+#### Custom CNN model
+1) Briefly dicuss the results.
+
 ##### Resnet18 results
-After getting great results ...
+After getting great results with a simple custom CNN model we wondered if a more complex multi-layer CNN model will give better results. We also decided to use Pytorch instread of Tensorflow for model training and evaluation to compare those 2 most popular DL frameworks. We chose  Resnet18 based on professor Roozbahani's recommendation. Running ahead we trained the model on both pretrained and non-pretrained weights and it didn't give any difference. We slightly adjusted the Resnet18 default input and output layer to account for the dimensionality of custom dataset. We also converted capped dataset dimensionality to nearest square number and reshape from 1D to 2D to be compatible with 2D convolutional filters in Resnet18. We chose binary cross entropy for the loss function and experimented with both stochastic gradient descent and Adam optimizers during training which didn't yield significant differences (SGD was a bit more stable though and gave more consistent training vs validation loss charts), but Adam was little faster during training. Since the model was much larger than the custom CNN model, it took significantly longer time to train with approximately a little over one minute for each epoch using cpu. After a bit of experimentation with observed that model always converges to optimal accuracy just after a few epochs, similar to custom CNN model and hence we made a final training only on 5 epochs. We used learning rate of 0.001 during trainig and tried to optimize it but it didn't yield significant improvements. After a bit of experimentaiton we got similar results to that of a custom CNN model with slighly bigger recall and lower precision but almost the same f-1 score and accuracy (see results in charts below). We concluded that due to relatively small size of our dataset a larger model doesn't provide any advantage. 
+
+
+
 
 
 
@@ -59,13 +68,13 @@ Plan:
 #### Precision
 Precision is the ratio of the TPs to the total TPs and FPs in a test sample. Maximizing precision will prevent real emails from being misclassified as spam. We aim to achieve a precision greater than 0.99.
 
-#### F-beta (change to f-1 score)
+#### F-1 beta (change to f-1 score)
 Precision is vital, but recall is important as well. The F-beta metric combines precision and recall together in a weighted average. By setting our beta to less than 1, we can prioritize minimizing FPs while still rewarding TPs. A good F-beta score is hard to define in advance, but we aim to achieve at least 0.8.
 
 #### Confusion matrix
 Confusion matrix components need to be calculated for our other metrics, so it makes sense to use this metric as well. The raw TP and FP numbers will help us evaluate our models. Our primary expectation from the confusion matrix is to have nearly 0 FPs.
 
-#### Sensitivity
+#### Sensitivity (Recall)
 
 #### Accuracy
 
@@ -88,10 +97,10 @@ Confusion matrix components need to be calculated for our other metrics, so it m
   </tr>
   <tr>
     <th>Random Forests</th>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>0.9865</td>
+    <td>0.9425</td>
+    <td>1.0</td>
+    <td>0.8913</td>
   <tr>
     <th>Naive Bayes</th>
     <td>0.8924</td>
