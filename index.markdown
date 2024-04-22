@@ -119,7 +119,7 @@ Confusion matrix components need to be calculated for our other metrics, so it m
 
 ### Visualizations
 #### Dataset Composition
-<img src="assets/composition.png" />
+<img src="assets/comp.png" />
 
 #### Random Forest
 <img style="width: 80%;" src="assets/rf_conf.png" />
