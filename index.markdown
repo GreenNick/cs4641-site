@@ -29,9 +29,9 @@ For data preprocessing, we used the Bag of Words algorithm to quantify the data 
 ### Model selection
 For the midterm portion of the project, we used Naive Bayes to analyze the email data. This algorithm classified our information as either "ham" (a real email) or "spam." We chose this algorithm for our email spam detection project because of its proven efficiency and effectiveness in handling large datasets, its ability to work well with text data through the application of conditional probability, and its fast computation time, making it an ideal solution for accurately classifying emails as spam or ham.
 
-Random Forests - [tbc]
-Custom CNN - [Carrington]
-Resnet18 - [Sergei]
+For the final portion of the project we trained and tested the dataset on additional 3 models: Random Forests, custom CNN and Resnet18 models. We chose Random Forests model because it is a more powerful model than Naive Bayes and is generally a good choice for classification tasks as well as because we covered Random Forests in depth in class and we curous how it would perform on the spam/ham dataset. We then decided to experiment with Deep Learning models , particularly CNNs. We chose CNNs over fully connected counterparts because the former have better sample complexity and perform better on smaller dataset (we considered out dataset with roughly 5000 entries a small one ). The custom CNN model is naive CNN implementation with just 1 convolutional layer and Resnet18 is larger multi-layer CNN model. We chose these models also to see how the size will affect the model convergence on our dataset (under-fitting if too small or overfitting if the model is too large) and which of the 2 CNN models will perform better. 
+
+
 
 ## Results and Discussion
 
