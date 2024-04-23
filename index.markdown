@@ -11,7 +11,7 @@ sidebar:
 
 In the 21st century, email remains a crucial communication tool, yet its utility is undermined by the challenge of spam. Our project will leverage machine learning to enhance spam detection, drawing upon the “Email Spam Detection Dataset (Classification)” from Kaggle. Similar endeavors in data-driven domains have emphasized the importance of applying analytical approaches for discerning patterns within vast datasets [1]. By applying cutting-edge machine learning techniques, this research aims to significantly improve the accuracy of spam detection [2], ensuring email remains a secure and efficient medium for communication [3].
 
-Dataset Link: Kaggle Email Spam Detection Dataset
+Dataset Link: Kaggle Email Spam Detection Dataset [4]
 
 ## Problem Definition
 
@@ -55,7 +55,7 @@ After getting great results with a simple custom CNN model we wondered if a more
 ### Conclusion
 Despite ongoing progress in Machine Learning and Deep Learning technologies research and improvement of spam detection remains a relevenat topic. Not only researches create more sophisticated models but also the spammers find and target vulnerabilities of those new models. Furthermore, a bottleneck in spam detection research is lack of publicly available high quality spam/ham data. Most researchers use the same (or similar pre-processed versions) of relatively small (~5500 entires) publicly aviable dataset [4]. While lack of spam data slows down the overall progress in the area, it allowed us to compare our results to those published relevant papers.
 
-Almeida et all in their work "Towards SMS Spam Filtering: Results under a New Dataset" did an extensive testing of various algorithms (predominantly classical machine learning algorithms without DL) on the same dataset as we did. They achieved best accuracies with Logistic regression and SVM models (97.64 and 97.59 respectively), which we intend to experiment with in future. They have achieved higher accuracy than us of 91.95% vs 89.24% using Naive Bayes model. However, we achieved a higher accuracy of 98.74% vs 95.36%  using Random Forests. It is important to note that they used a special tokenizer for Naive Bayes, something that we didn't do. However, our higher accuracy for Random Forests could be explained by a different train/test split of dataset. We did 80/20 split while Almeida et all did a 30/70 split, a significantly smaller amount of training data. 
+Almeida et all in their work "Towards SMS Spam Filtering: Results under a New Dataset" did an extensive testing of various algorithms (predominantly classical machine learning algorithms without DL) on the same dataset as we did [2]. They achieved best accuracies with Logistic regression and SVM models (97.64 and 97.59 respectively), which we intend to experiment with in future. They have achieved higher accuracy than us of 91.95% vs 89.24% using Naive Bayes model. However, we achieved a higher accuracy of 98.74% vs 95.36%  using Random Forests. It is important to note that they used a special tokenizer for Naive Bayes, something that we didn't do. However, our higher accuracy for Random Forests could be explained by a different train/test split of dataset. We did 80/20 split while Almeida et all did a 30/70 split, a significantly smaller amount of training data. 
 
 ### Metrics
 #### Confusion matrix
