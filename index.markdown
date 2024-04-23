@@ -48,35 +48,23 @@ After struggling with improving precision with Naive Bayes we decided to proceed
 After experiencing notable success with simpler models, we ventured into more advanced neural network architectures by implementing a Convolutional Neural Network (CNN) using the Keras framework for this project. We designed the CNN architecture to specifically address the challenges of our dataset, initializing it with convolutional and pooling layers to enhance feature extraction. The model was compiled with the Adam optimizer, leveraging its adaptive learning rate capabilities, and we utilized categorical cross-entropy as the loss function to cater to our multi-class classification task. During training, we observed a steady increase in model performance metrics: the precision achieved was 97%, with an accuracy of 98%, and an F1-score of 92.3%. These metrics indicate a well-balanced model with a strong capability to generalize, as evidenced by minimal overfitting of the validation data. We fine-tuned the model further by adjusting the number of filters and kernel size, which resulted in an optimized balance between recall and precision, ensuring robust performance across various classes.
 
 ##### Resnet18 results
-After getting great results with a simple custom CNN model we wondered if a more complex multi-layer CNN model will give better results. We also decided to use Pytorch instread of Tensorflow for model training and evaluation to compare those 2 most popular DL frameworks. We chose  Resnet18 based on professor Roozbahani's recommendation. Running ahead we trained the model on both pretrained and non-pretrained weights and it didn't give any difference. We slightly adjusted the Resnet18 default input and output layer to account for the dimensionality of custom dataset. We also converted capped dataset dimensionality to nearest square number and reshape from 1D to 2D to be compatible with 2D convolutional filters in Resnet18. We chose binary cross entropy for the loss function and experimented with both stochastic gradient descent and Adam optimizers during training which didn't yield significant differences (SGD was a bit more stable though and gave more consistent training vs validation loss charts), but Adam was little faster during training. Since the model was much larger than the custom CNN model, it took significantly longer time to train with approximately a little over one minute for each epoch using cpu. After a bit of experimentation with observed that model always converges to optimal accuracy just after a few epochs, similar to custom CNN model and hence we made a final training only on 5 epochs. We used learning rate of 0.001 during trainig and tried to optimize it but it didn't yield significant improvements. After a bit of experimentaiton we got similar results to that of a custom CNN model with slighly bigger recall and lower precision but almost the same f-1 score and accuracy (see results in charts below). We concluded that due to relatively small size of our dataset a larger model doesn't provide any advantage.
-
-
-
-
-
-
-Plan:
-1) Couldn't find high quality and quantity spam/ham data online and prioritized testing other models first.
-2) Random forests paragraph (Should give the same result imao as Naive Bayes)
-3) Custom CNN using Tensorflow (high accuracy and precision)
-4) Resnet18
-5) Conclusion
+After getting great results with a simple custom CNN model we wondered if a more complex multi-layer CNN model will give better results. We also decided to use Pytorch instread of Tensorflow for model training and evaluation to compare those 2 most popular DL frameworks. We chose  Resnet18 based on professor Roozbahani's recommendation. Running ahead we trained the model on both pretrained and non-pretrained weights and it didn't give any difference. We slightly adjusted the Resnet18 default input and output layer to account for the dimensionality of custom dataset. We also converted capped dataset dimensionality to nearest square number and reshape from 1D to 2D to be compatible with 2D convolutional filters in Resnet18. We chose binary cross entropy for the loss function and experimented with both stochastic gradient descent and Adam optimizers during training which didn't yield significant differences (SGD was a bit more stable though and gave more consistent training vs validation loss charts), but Adam was little faster during training. Since the model was much larger than the custom CNN model, it took significantly longer time to train with approximately a little over one minute for each epoch using cpu. After a bit of experimentation with observed that model always converges to optimal accuracy just after a few epochs, similar to custom CNN model and hence we made a final training only on 5 epochs. The batch size used was 64. We used learning rate of 0.001 during trainig and tried to optimize it but it didn't yield significant improvements. After a bit of experimentaiton we got similar results to that of a custom CNN model with slighly bigger recall and lower precision but almost the same f-1 score and accuracy (see results in charts below). We concluded that due to relatively small size of our dataset a larger model doesn't provide any advantage.
 
 
 
 ### Metrics
+#### Confusion matrix
+Confusion matrix components need to be calculated for our other metrics, so it makes sense to use this metric as well. The raw TP and FP numbers will help us evaluate our models. Our primary expectation from the confusion matrix is to have nearly 0 FPs.
+#### Accuracy
+Accuarcy is most intiutive metrics when it comes to evaluating the classfication model. It is essentially number of correct predictions over total number of predicitons or (TP + TN) / (TP + TN + FP + FN). Based on related papers and results for similar problmes we aim to achieve accuracy of at least 95%.
 #### Precision
 Precision is the ratio of the TPs to the total TPs and FPs in a test sample. Maximizing precision will prevent real emails from being misclassified as spam. We aim to achieve a precision greater than 0.99.
 
-#### F-1 beta (change to f-1 score)
-Precision is vital, but recall is important as well. The F-beta metric combines precision and recall together in a weighted average. By setting our beta to less than 1, we can prioritize minimizing FPs while still rewarding TPs. A good F-beta score is hard to define in advance, but we aim to achieve at least 0.8.
-
-#### Confusion matrix
-Confusion matrix components need to be calculated for our other metrics, so it makes sense to use this metric as well. The raw TP and FP numbers will help us evaluate our models. Our primary expectation from the confusion matrix is to have nearly 0 FPs.
-
 #### Sensitivity (Recall)
+Sensitivity (or recall) is the ratio of the TPs to the total TPs and FNs in a test sample. Maximizing sensitivity will prevent spam emails being misclassified as real emails. We aim to achieve sensitivity of at least 95%.
 
-#### Accuracy
+#### F-1 score
+Precision is vital, but recall is important as well. The F-1 score metric combines precision and recall together and is a widely used metric in classification tasks. A good F-1 score is hard to define in advance, but we aim to achieve at least 0.8.
 
 #### Results table
 <table>
