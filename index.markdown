@@ -81,13 +81,6 @@ Precision is vital, but recall is important as well. The F-1 score metric combin
     <th>Sensitivity</th>
   </tr>
   <tr>
-    <th>Random Forests</th>
-    <td>0.9874</td>
-    <td>0.9466</td>
-    <td>1.0</td>
-    <td>0.8986</td>
-  </tr>
-  <tr>
     <th>Naive Bayes</th>
     <td>0.8924</td>
     <td>0.6842</td>
@@ -95,18 +88,25 @@ Precision is vital, but recall is important as well. The F-1 score metric combin
     <td>0.942</td>
   </tr>
   <tr>
+    <th>Random Forests</th>
+    <td>0.9794</td>
+    <td>0.9139</td>
+    <td>1.0</td>
+    <td>0.8414</td>
+  </tr>
+  <tr>
     <th>Resnet18</th>
-    <td>0.9835</td>
-    <td>0.9366</td>
-    <td>0.95</td>
-    <td>0.9236</td>
+    <td>0.9816</td>
+    <td>0.9259</td>
+    <td>0.9398</td>
+    <td>0.9124</td>
   </tr>
   <tr>
     <th>CNN</th>
-    <td>0.9803</td>
-    <td>0.9231</td>
-    <td>0.9706</td>
-    <td>0.88</td>
+    <td>0.9892</td>
+    <td>0.9574</td>
+    <td>0.9854</td>
+    <td>0.9310</td>
   </tr>
 </table>
 
