@@ -35,24 +35,27 @@ For the final portion of the project we trained and tested the dataset on additi
 
 ## Results and Discussion
 
-#### Mitdterm report part
+### Mitdterm report part
 Overall, the model did a good job of classifying the data we input. More specifically, it does a great job of identifying the hams in the dataset with high accuracy. On the other hand, it is only able to correctly classify the spam about half of the time (see the confusion matrix in `main.ipynb` and precision score below). We will try to fix this problem with different models in the final project, but we believe this problem could also be due to the lack of "spam" data in the dataset. If the latter is true, we could look into finding a new dataset for the project.
 
 
-#### Final Report part
+### Final Report part
 We used 80/20 train/test split for the model training and testing for all of the models. We also specified specified a random seed to ensure the dataset is split the same way into training and testing sets to ensure better and consistent comparison across different models. For preprocessing methods we generally experimented a little by removing 'stop words' and capping the dimensionality (or vocab size). The former reduced the model perfomance during Naive Bayes testing and we decided not to proceed using it and the later didn't have significant effects on the models perfomance overall. <br>
 All models training, testing and vizualizations can be also viewed in the project folder in 4 respective jupyter notebooks. 
 
-#### Random Forests results
+### Random Forests results
 After struggling with improving precision with Naive Bayes we decided to proceed with Random Forests and the results exceededed expectations. We initialized a RandomForestClassifier model with default settings from sklearn.ensemble library and trained the model. During the evalation the model reached a precision of 100% and accuracy of 98.39%. So there were not false positives during testing - all the ham messages were classfied correctly as spam. The sensitivity (or recall) slightly reduced from 0.942 to 0.8913 comparing to Naive Bayes. Yet, since the drop in recall was much smaller than increase in precision the overall f1-score significantly improved from 0.6842 to 0.9425.
 
-#### Custom CNN model
+### Custom CNN model
 After experiencing notable success with simpler models, we ventured into more advanced neural network architectures by implementing a Convolutional Neural Network (CNN) using the Keras framework for this project. We designed the CNN architecture to specifically address the challenges of our dataset, initializing it with convolutional and pooling layers to enhance feature extraction. The model was compiled with the Adam optimizer, leveraging its adaptive learning rate capabilities, and we utilized categorical cross-entropy as the loss function to cater to our multi-class classification task. During training, we observed a steady increase in model performance metrics: the precision achieved was 97%, with an accuracy of 98%, and an F1-score of 92.3%. These metrics indicate a well-balanced model with a strong capability to generalize, as evidenced by minimal overfitting of the validation data. We fine-tuned the model further by adjusting the number of filters and kernel size, which resulted in an optimized balance between recall and precision, ensuring robust performance across various classes.
 
-##### Resnet18 results
+### Resnet18 results
 After getting great results with a simple custom CNN model we wondered if a more complex multi-layer CNN model will give better results. We also decided to use Pytorch instread of Tensorflow for model training and evaluation to compare those 2 most popular DL frameworks. We chose  Resnet18 based on professor Roozbahani's recommendation. Running ahead we trained the model on both pretrained and non-pretrained weights and it didn't give any difference. We slightly adjusted the Resnet18 default input and output layer to account for the dimensionality of custom dataset. We also converted capped dataset dimensionality to nearest square number and reshape from 1D to 2D to be compatible with 2D convolutional filters in Resnet18. We chose binary cross entropy for the loss function and experimented with both stochastic gradient descent and Adam optimizers during training which didn't yield significant differences (SGD was a bit more stable though and gave more consistent training vs validation loss charts), but Adam was little faster during training. Since the model was much larger than the custom CNN model, it took significantly longer time to train with approximately a little over one minute for each epoch using cpu. After a bit of experimentation with observed that model always converges to optimal accuracy just after a few epochs, similar to custom CNN model and hence we made a final training only on 5 epochs. The batch size used was 64. We used learning rate of 0.001 during trainig and tried to optimize it but it didn't yield significant improvements. After a bit of experimentaiton we got similar results to that of a custom CNN model with slighly bigger recall and lower precision but almost the same f-1 score and accuracy (see results in charts below). We concluded that due to relatively small size of our dataset a larger model doesn't provide any advantage.
 
+### Conclusion
+Despite ongoing progress in Machine Learning and Deep Learning technologies research and improvement of spam detection remains a relevenat topic. Not only researches create more sophisticated models but also the spammers find and target vulnerabilities of those new models. Furthermore, a bottleneck in spam detection research is lack of publicly available high quality spam/ham data. Most researchers use the same (or similar pre-processed versions) of relatively small (~5500 entires) publicly aviable dataset [4]. While lack of spam data slows down the overall progress in the area, it allowed us to compare our results to those published relevant papers.
 
+Almeida et all in their work "Towards SMS Spam Filtering: Results under a New Dataset" did an extensive testing of various algorithms (predominantly classical machine learning algorithms without DL) on the same dataset as we did. They achieved best accuracies with Logistic regression and SVM models (97.64 and 97.59 respectively), which we intend to experiment with in future. They have achieved higher accuracy than us of 91.95% vs 89.24% using Naive Bayes model. However, we achieved a higher accuracy of 98.74% vs 95.36%  using Random Forests. It is important to note that they used a special tokenizer for Naive Bayes, something that we didn't do. However, our higher accuracy for Random Forests could be explained by a different train/test split of dataset. We did 80/20 split while Almeida et all did a 30/70 split, a significantly smaller amount of training data. 
 
 ### Metrics
 #### Confusion matrix
@@ -128,13 +131,14 @@ Precision is vital, but recall is important as well. The F-1 score metric combin
 <img style="width: 80%;" src="assets/cnn_conf.png" />
 
 ### Next steps
-Things that we consider to do next to improve the model:
-1) Remove the stop words from the vocabulary.
-2) Search for simliar datasets and add more data for the model, particularly "spam" data
-3) Implement other ML algorithms (SVM, Random forests), record and compare results.
-4) Try different preprocessing technique (N-grams). Try combinations of different models and pre-processing techniques.
-5) Implement deep learning model (CNN) with pytorch
-6) Compare our results with results from relevant papers.
+Things to try next to improve model:
+1) Train and test the dataset on SVM model
+2) Train and test the dataset on Logistic regression model
+3) For deeplearning use learning rate auto-optimization technique that seem to avaiable online.
+4) Experiment with 'Lion' optimizer that relatively recently came out: https://github.com/lucidrains/lion-pytorch
+5) Experiment with ensemble deep learning to combine predictions of several different models.
+6) Integrate the model to an email app to see how it will perform in real world settings.
+
 
 ## References
 
@@ -143,6 +147,8 @@ Things that we consider to do next to improve the model:
 [2] T. Almeida, J. Gómez Hidalgo, and A. Yamakami, "Towards SMS Spam Filtering: Results under a New Dataset," International Journal of Information Security Science, vol. 2, no. 1, pp. 1-18, 2013.
 
 [3] S. Kiritchenko, S. Matwin, "Email Classification with Co-Training," in Proceedings of the 2006 Conference on Privacy, Security and Trust, Markham, Ontario, Canada, 2006, pp. 1-8.
+
+[4] Email Spam Detection Dataset (classification), https://www.kaggle.com/datasets/shantanudhakadd/email-spam-detection-dataset-classification/data
 
 ## Contributions
 <table>
