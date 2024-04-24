@@ -166,7 +166,7 @@ Things to try next to improve model:
     <tr>
     <tr>
         <td>Carrington Kelsey</td>
-        <td>Readme creation, project write up for team page</td>
+        <td>CNN model, slides, project README</td>
     <tr>
     <tr>
         <td>Yash Desai</td>
