@@ -154,11 +154,11 @@ Things to try next to improve model:
 <table>
     <tr>
         <td>Name</td>
-        <td>Midterm Contributions</td>
+        <td>Final Contributions</td>
     </tr>
     <tr>
         <td>Sergei Novikov</td>
-        <td>Preprocessing and model implementation</td>
+        <td>Resnet18 & RandomForests implementation</td>
     <tr>
     <tr>
         <td>Nicholas Bowers</td>
