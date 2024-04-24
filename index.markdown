@@ -131,13 +131,13 @@ Precision is vital, but recall is important as well. The F-1 score metric combin
 <img style="width: 80%;" src="assets/cnn_conf.png" />
 
 ### Next steps
-Things to try next to improve model:
-1) Train and test the dataset on SVM model
-2) Train and test the dataset on Logistic regression model
-3) For deeplearning use learning rate auto-optimization technique that seem to avaiable online.
-4) Experiment with 'Lion' optimizer that relatively recently came out: https://github.com/lucidrains/lion-pytorch
-5) Experiment with ensemble deep learning to combine predictions of several different models.
-6) Integrate the model to an email app to see how it will perform in real world settings.
+Things to try next to improve model: <br>
+1) Train and test the dataset on SVM model <br>
+2) Train and test the dataset on Logistic regression model <br>
+3) For deeplearning use learning rate auto-optimization technique that seem to avaiable online. <br>
+4) Experiment with 'Lion' optimizer that relatively recently came out: https://github.com/lucidrains/lion-pytorch <br>
+5) Experiment with ensemble deep learning to combine predictions of several different models. <br>
+6) Integrate the model to an email app to see how it will perform in real world settings. <br>
 
 
 ## References
